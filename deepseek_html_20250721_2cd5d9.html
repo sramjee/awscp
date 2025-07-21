@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Cloud Practitioner Services Map</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: white;
+      margin: 0;
+      padding: 10px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      padding: 15px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2em;
+      margin: 5px 0 15px 0;
+      font-weight: bold;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 15px;
+      border: 1px dashed #ccc;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .row-title {
+      width: 100%;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 3px;
+    }
+
+    .service-box {
+      flex: 1 1 160px;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .service-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .service-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 0.95em;
+      color: #fff; /* White text for better contrast */
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* Text shadow for readability */
+    }
+
+    .service-description {
+      font-size: 0.75em;
+      line-height: 1.3;
+      color: rgba(255,255,255,0.9); /* Lighter white with opacity */
+      text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    }
+
+    .service-description::before {
+      content: "• ";
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* Service category colors with better contrast */
+    .compute { background: linear-gradient(135deg, #e05500, #ff8e53); }
+    .storage { background: linear-gradient(135deg, #008573, #00d4aa); }
+    .hybrid { background: linear-gradient(135deg, #e05500, #ff8e53); }
+    .backup { background: linear-gradient(135deg, #6a3093, #b794d1); }
+    .networking { background: linear-gradient(135deg, #005a9e, #40a9ff); }
+    .security { background: linear-gradient(135deg, #6a3093, #b794d1); }
+    .database { background: linear-gradient(135deg, #6b9115, #a8e063); }
+    .billing { background: linear-gradient(135deg, #d10000, #fd1d1d); }
+    .governance { background: linear-gradient(135deg, #006341, #93f9b9); }
+    .infra { background: linear-gradient(135deg, #3a3b8f, #8f94fb); }
+    .migration { background: linear-gradient(135deg, #5e1b8a, #9370db); }
+
+    /* Special contrast adjustments for light backgrounds */
+    .billing .service-description,
+    .governance .service-description,
+    .infra .service-description,
+    .migration .service-description {
+      color: rgba(255,255,255,0.95);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .note {
+      background: #f8f9fa;
+      border-left: 3px solid #0078d4;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    .note h3 {
+      margin: 5px 0;
+      font-size: 1em;
+      color: #2c3e50;
+    }
+    
+    .note p {
+      color: #333;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>AWS Cloud Practitioner Services Map</h1>
+
+  <div class="row">
+    <div class="row-title">Compute Services</div>
+    <div class="service-box compute">
+      <div class="service-name">EC2</div>
+      <div class="service-description">Virtual servers • Scalable capacity • Multiple instance types</div>
+    </div>
+    <div class="service-box compute">
+      <div class="service-name">Lambda</div>
+      <div class="service-description">Serverless compute • Event-driven • Pay per execution</div>
+    </div>
+    <div class="service-box compute">
+      <div class="service-name">ECS</div>
+      <div class="service-description">Container service • Docker support • Managed clusters</div>
+    </div>
+    <div class="service-box compute">
+      <div class="service-name">EKS</div>
+      <div class="service-description">Managed Kubernetes • Container orchestration • AWS integration</div>
+    </div>
+    <div class="service-box compute">
+      <div class="service-name">Elastic Beanstalk</div>
+      <div class="service-description">PaaS offering • Automatic scaling • Developer focused</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-title">Core Storage Services</div>
+    <div class="service-box storage">
+      <div class="service-name">S3</div>
+      <div class="service-description">Object storage • Multiple storage classes • Glacier included • 11 9's durability</div>
+    </div>
+    <div class="service-box storage">
+      <div class="service-name">EBS</div>
+      <div class="service-description">Block storage • EC2 attached • SSD/HDD options • Snapshot capability</div>
+    </div>
+    <div class="service-box storage">
+      <div class="service-name">EFS</div>
+      <div class="service-description">NFS file storage • Multi-AZ • Linux workloads • Elastic scaling</div>
+    </div>
+    <div class="service-box storage">
+      <div class="service-name">FSx</div>
+      <div class="service-description">High-performance file systems • Windows/Lustre • HPC workloads</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-title">Hybrid & Migration Storage</div>
+    <div class="service-box hybrid">
+      <div class="service-name">Storage Gateway</div>
+      <div class="service-description">Hybrid cloud storage • File/Volume/Tape gateways • On-prem integration</div>
+    </div>
+    <div class="service-box hybrid">
+      <div class="service-name">DataSync</div>
+      <div class="service-description">Data transfer service • On-prem to AWS • Scheduled transfers</div>
+    </div>
+    <div class="service-box hybrid">
+      <div class="service-name">Snow Family</div>
+      <div class="service-description">Physical data transfer • Snowcone/Snowball/Snowmobile • Petabyte-scale</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-title">Backup & Archive</div>
+    <div class="service-box backup">
+      <div class="service-name">AWS Backup</div>
+      <div class="service-description">Centralized backup • Cross-service • Policy-based • Compliance</div>
+    </div>
+    <div class="service-box backup">
+      <div class="service-name">S3 Glacier Classes</div>
+      <div class="service-description">Archive storage • Instant/Flexible/Deep Archive • Cost-optimized</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-title">Networking & Content Delivery</div>
+    <div class="service-box networking">
+      <div class="service-name">VPC</div>
+      <div class="service-description">Private network • Subnets • Security groups</div>
+    </div>
+    <div class="service-box networking">
+      <div class="service-name">CloudFront</div>
+      <div class="service-description">CDN service • Edge locations • DDoS protection</div>
+    </div>
+    <div class="service-box networking">
+      <div class="service-name">Route 53</div>
+      <div class="service-description">DNS service • Domain registration • Health checks</div>
+    </div>
+    <div class="service-box networking">
+      <div class="service-name">API Gateway</div>
+      <div class="service-description">Managed APIs • REST/WebSocket • Throttling</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-title">Database Services</div>
+    <div class="service-box database">
+      <div class="service-name">RDS</div>
+      <div class="service-description">Managed SQL • Multi-AZ • Automated backups</div>
+    </div>
+    <div class="service-box database">
+      <div class="service-name">DynamoDB</div>
+      <div class="service-description">NoSQL database • Serverless • Single-digit ms</div>
+    </div>
+    <div class="service-box database">
+      <div class="service-name">Aurora</div>
+      <div class="service-description">MySQL/PostgreSQL • High performance • 5x throughput</div>
+    </div>
+    <div class="service-box database">
+      <div class="service-name">Redshift</div>
+      <div class="service-description">Data warehouse • PB-scale analytics • Columnar storage</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-title">Security & Identity</div>
+    <div class="service-box security">
+      <div class="service-name">IAM</div>
+      <div class="service-description">Access control • Users/groups/roles • Policy-based</div>
+    </div>
+    <div class="service-box security">
+      <div class="service-name">KMS</div>
+      <div class="service-description">Key management • Encryption • HSM option</div>
+    </div>
+    <div class="service-box security">
+      <div class="service-name">WAF</div>
+      <div class="service-description">Web firewall • Rule-based • Protect from OWASP</div>
+    </div>
+    <div class="service-box security">
+      <div class="service-name">Shield</div>
+      <div class="service-description">DDoS protection • Standard/Advanced • Always-on</div>
+    </div>
+    <div class="service-box security">
+      <div class="service-name">Cognito</div>
+      <div class="service-description">User authentication • Social login • Mobile/web</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-title">Migration & Transfer</div>
+    <div class="service-box migration">
+      <div class="service-name">DMS</div>
+      <div class="service-description">Database migration • Minimal downtime • Schema conversion</div>
+    </div>
+    <div class="service-box migration">
+      <div class="service-name">Direct Connect</div>
+      <div class="service-description">Dedicated network • Bypass internet • 1Gbps-100Gbps</div>
+    </div>
+    <div class="service-box migration">
+      <div class="service-name">Transfer Family</div>
+      <div class="service-description">File transfer • SFTP/FTPS/FTP • Managed service</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-title">Management & Governance</div>
+    <div class="service-box governance">
+      <div class="service-name">CloudWatch</div>
+      <div class="service-description">Monitoring • Metrics • Alarms • Logs</div>
+    </div>
+    <div class="service-box governance">
+      <div class="service-name">CloudTrail</div>
+      <div class="service-description">API logging • Audit trail • Compliance</div>
+    </div>
+    <div class="service-box governance">
+      <div class="service-name">AWS Config</div>
+      <div class="service-description">Resource tracking • Change history • Rules</div>
+    </div>
+    <div class="service-box governance">
+      <div class="service-name">Organizations</div>
+      <div class="service-description">Multi-account • Consolidated billing • SCPs</div>
+    </div>
+    <div class="service-box governance">
+      <div class="service-name">Systems Manager</div>
+      <div class="service-description">Operational insights • Run commands • Patch management</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-title">Billing & Cost Management</div>
+    <div class="service-box billing">
+      <div class="service-name">Cost Explorer</div>
+      <div class="service-description">Spending analysis • Cost trends • Visualization</div>
+    </div>
+    <div class="service-box billing">
+      <div class="service-name">Budgets</div>
+      <div class="service-description">Spending limits • Alerts • Forecasts</div>
+    </div>
+    <div class="service-box billing">
+      <div class="service-name">Pricing Calculator</div>
+      <div class="service-description">Cost estimates • Service planning • TCO</div>
+    </div>
+    <div class="service-box billing">
+      <div class="service-name">Savings Plans</div>
+      <div class="service-description">Discount model • Commit to usage • Up to 72% off</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="row-title">Global Infrastructure</div>
+    <div class="service-box infra">
+      <div class="service-name">Regions</div>
+      <div class="service-description">Geographic areas • Isolated • Multiple AZs</div>
+    </div>
+    <div class="service-box infra">
+      <div class="service-name">Availability Zones</div>
+      <div class="service-description">Isolated locations • High availability • Low latency</div>
+    </div>
+    <div class="service-box infra">
+      <div class="service-name">Edge Locations</div>
+      <div class="service-description">CDN points • 400+ locations • Low latency</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <h3>🔄 Key Storage Improvements:</h3>
+    <p><strong>Core Storage:</strong> Added FSx, clarified S3 includes Glacier classes<br>
+    <strong>Hybrid/Migration:</strong> Moved Storage Gateway here, added DataSync<br>
+    <strong>Backup/Archive:</strong> New category highlighting AWS Backup and Glacier classes</p>
+  </div>
+
+  <div class="note">
+    <h3>📚 Storage Types Explained:</h3>
+    <p><strong>Object Storage:</strong> S3 - files as objects with metadata<br>
+    <strong>Block Storage:</strong> EBS - raw storage attached to EC2<br>
+    <strong>File Storage:</strong> EFS/FSx - network-attached file systems<br>
+    <strong>Hybrid:</strong> Services that bridge on-premises and cloud storage</p>
+  </div>
+
+  <div class="note">
+    <h3>✅ Exam Coverage Note:</h3>
+    <p>This map includes <strong>all key services</strong> for the CLF-C02 exam with improved storage categorization and missing services added.</p>
+  </div>
+</div>
+</body>
+</html>
